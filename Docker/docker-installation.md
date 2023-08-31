@@ -9,7 +9,7 @@
 
 sudo su
 
-yum update -y
+######################yum update -y
 
 yum install docker -y
 
@@ -17,4 +17,4 @@ systemctl start docker
 
 systemctl enable docker
 
-systemctl docker status
+systemctl status docker
