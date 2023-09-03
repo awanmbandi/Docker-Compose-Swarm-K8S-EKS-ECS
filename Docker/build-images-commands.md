@@ -9,6 +9,7 @@
 ## Step-1: Run the base Nginx container
 - Access the URL http://localhost
 ```
+docker run --name PERSONAL_CONTAINER_NAME -p HOST_PORT:CONTAINER_PORT -d IMAGE_NAME
 docker run --name mynginxdefault -p 80:80 -d nginx
 docker ps
 docker stop mynginxdefault
