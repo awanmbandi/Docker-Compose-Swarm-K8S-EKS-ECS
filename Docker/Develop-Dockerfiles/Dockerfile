@@ -101,7 +101,7 @@ HEALTHCHECK
     --timeout=<duration> (default: 30s)
     --retries=<number> (default: 3)
 - The health check will first run interval seconds after the container is started, and then again interval seconds after each previous check completes. If a single run of the check takes longer than timeout seconds then the check is considered to have failed. It takes retries consecutive failures of the health check for the container to be considered unhealthy.
-- There can only be one HEALTHCHECK instruction in a Dockerfile. If you list more than one then only the last HEALTHCHECK will take effect.
+- There can only be ONE HEALTHCHECK instruction in a Dockerfile. If you list more than one then only the last HEALTHCHECK will take effect.
 - <command> can be either a shell command or an exec JSON array.
 - The commands exit status indicates the health status of the container.
     0: success - the container is healthy and ready for use
