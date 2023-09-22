@@ -1,23 +1,16 @@
-FROM node:14
-
+# using nodejs base image
+FROM node:latest
+#defining working directory
 WORKDIR /app
-
-# USER root
-
-COPY package.json .
-
+# using the root user to execute the container image
+USER root
+# copying the nodejs dependnecy file
+COPY package.json /app/
+# installing npm for nodejs
 RUN npm install
-
-COPY . .
-
+# copying all, applications files to the work directory
+COPY . /app/
+# exposing port number
 EXPOSE 80
-
-ENV application_name = client_feedback_app
-ENV compliance       = nist
-
-LABEL environment    = "development"
-LABEL container_user = "root"
-
-HEALTHCHECK CMD curl --fail http://localhost:9000 || exit 1
-
-CMD [ "node", "server.js" ]
+# executing web application
+CMD [ "node", "/app/server.js" ]
