@@ -5,6 +5,12 @@
 
 
 ## Docker Commands 
+- Deploy the Application with Health Check
+- Confirm health check status
+- Exect into the Contianer using the below command and Sabotash/Delete all App Files in /app
+    - loging to container: `docker exec -it mydb bash `
+    - Try to access the application and you'll notice not working 
+    - Exit and Run `docker ps` to Check the App Health State and you'll see `Unhealthy` 
 
 ## Remove All Docker Containers Running or Not at Once
 - Delete All Containers: docker rm -f $(docker ps -a -q)

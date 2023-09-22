@@ -2,7 +2,7 @@ FROM node:14
 
 WORKDIR /app
 
-# USER root
+USER root
 
 COPY package.json .
 
