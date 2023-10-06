@@ -46,6 +46,10 @@ kubectl get svc
 # Access REST Application 
 http://<Load-Balancer-Service-IP>/hello
 curl http://<Load-Balancer-Service-IP>/hello
+
+# Access REST Application 
+## Run "kubectl get pods" and match the last few characters of the pod name with the FrontEnd Hello App
+kubectl get pods
 ```
 
 ## Step-04: Delete & Recreate Objects using kubectl apply
