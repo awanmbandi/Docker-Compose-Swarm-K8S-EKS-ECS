@@ -55,6 +55,7 @@ USER
 - By "Default Docker Uses" the "Root" user Priviledge (This could be VERY RISKY)
 
 RUN
+- Use to Execute Commands to Install App Softwares, Packages and Libraries
 - This gets Executed During the BUILD OF THE IMAGE 
 - You use this instruction to perform installations of packages, Libraries, Dependencies on the Container etc
 - Example: 
@@ -65,6 +66,7 @@ RUN
 
 COPY
 - This gets Executed During the BUILD OF THE IMAGE 
+- Copies Files and Folders from the Docker Host (where you build image) to the Docker Image/Artifact
 - Copies new files or directories from ["<src> ..."] and adds them to the filesystem of the image at the path ["<dest>"]
 - COPY <src> [<src> ...] <dest>
 - <src> must be relative to the source directory that is being built (the context of the build).
@@ -74,6 +76,7 @@ COPY
 ADD
 - If <src> is a file or directory, then they must be relative to the source directory that is being built (the context of the build).
 - This allowes you to download particular files/content from certain locations to the Container
+- Can also be used to Copy Files from the Docker Host to the Docker Image
 - Example: https:// /mnt/app-storage/
 - Copies new files, directories, or remote file URLs from <src> and adds them to the filesystem of the image at the path <dest>
 - <dest> is an absolute path, or a path relative to WORKDIR.
@@ -94,7 +97,7 @@ HEALTHCHECK
 
 **Information:**
 
-- Tells Docker how to test a container to check that it is still working
+- Tells Docker how to test a container to check and confirm that it is Healthy...
 - Whenever a health check passes, it becomes healthy. After a certain number of consecutive failures, it becomes unhealthy.
 - The <options> that can appear are...
     --interval=<duration> (default: 30s)
@@ -129,6 +132,11 @@ ENTRYPOINT
 - This Operation and the CMD command in the Dockerfile will only get Executed when we create the Container from the Image
 - This command and the `CMD` commands will only be Executed during the deployment of the Container not duing Image Build
 
+Difference Between "CMD" and "ENTRYPOINT"
+=========================================
+- Use ENTRYPOINT for the core program the container should always run.
+- Use CMD for default arguments that users can customize.
+- They can often be used together for a good balance of flexibility and control.
 
 ## BUILD AND PUSH TO DOCKER HUB (STEP by STEP)
 - https://docs.docker.com/docker-hub/
