@@ -45,3 +45,26 @@ docker push <your-docker-hub-id>/mynginx_image1:v1-release
 ## Step-5: Verify the same on docker hub
 - Login to docker hub and verify the image we have pushed
 - Url: https://hub.docker.com/repositories
+
+
+
+SonarQube Scanner
+Snyk
+Multibranch Scan Webhook Trigger
+Eclipse Temurin installer
+Pipeline: Stage View
+Docker
+Docker Commons
+Docker Pipeline
+docker-build-step
+Docker API
+Kubernetes
+Kubernetes CLI
+Kubernetes Credentials
+Kubernetes Client API
+Kubernetes Credentials Provider
+Kubernetes :: Pipeline :: DevOps Steps
+Slack Notification
+ssh-agent
+BlueOcean
+Build Timestamp
