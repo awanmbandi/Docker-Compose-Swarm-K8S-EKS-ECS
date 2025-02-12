@@ -1,6 +1,3 @@
-# Docker - Essential Commands
-- The below are the list of essential commands we are in need 
-
 # Docker Essential Commands
 This document provides a list of essential Docker commands along with their descriptions.
 
