@@ -1,32 +1,10 @@
 # Docker - Essential Commands
 - The below are the list of essential commands we are in need 
 
-|     Commands                 |    Description                                  |
-| ------------------------------- | --------------------------------------------- |
-| docker ps | List all running containers |
-| docker ps -a | List all containers stopped, running |
-| docker stop container-id | Stop the container which is running |
-| docker start container-id | Start the container which is stopped |
-| docker restart container-id | Restart the container which is running |
-| docker port container-id | List port mappings of a specific container |
-| docker rm container-id or name | Remove the stopped container |
-| docker rm -f container-id or name| Remove the running container forcefully |
-| docker pull image-info | Pull the image from docker hub repository |
-| docker pull mysql/mysql-server:latest | Pull the image from docker hub repository |
-| docker exec -it container-name /bin/sh | Connect to linux container and execute commands in container |
-| docker rmi image-id | Remove the docker image |
-| docker logout | Logout from docker hub |
-| docker login -u username -p password | Login to docker hub |
-| docker stats | Display a live stream of container(s) resource usage statistics |
-| docker top container-id or name | Display the running processes of a container |
-| docker version | Show the Docker version information |
-
-
 # Docker Essential Commands
-
 This document provides a list of essential Docker commands along with their descriptions.
 
-## Container Management
+## Docker Container Management Commands
 
 | Command | Description |
 |---------|-------------|
@@ -46,7 +24,7 @@ This document provides a list of essential Docker commands along with their desc
 | `docker rename <old-name> <new-name>` | Rename a container |
 | `docker update <container-id>` | Update configuration of one or more containers |
 
-## Image Management
+## Docker Image Management Commands
 
 | Command | Description |
 |---------|-------------|
@@ -60,7 +38,7 @@ This document provides a list of essential Docker commands along with their desc
 | `docker save -o <file-name>.tar <image-name>` | Save an image to a tar archive |
 | `docker load -i <file-name>.tar` | Load an image from a tar archive |
 
-## Network Management
+## Docker Network Management Commands
 
 | Command | Description |
 |---------|-------------|
@@ -71,7 +49,7 @@ This document provides a list of essential Docker commands along with their desc
 | `docker network disconnect <network-name> <container-id>` | Disconnect a container from a network |
 | `docker network rm <network-name>` | Remove one or more networks |
 
-## Volume Management
+## Docker Volume Management Commands
 
 | Command | Description |
 |---------|-------------|
@@ -81,7 +59,7 @@ This document provides a list of essential Docker commands along with their desc
 | `docker volume rm <volume-name>` | Remove one or more volumes |
 | `docker volume prune` | Remove all unused volumes |
 
-## System and Information
+## Docker System and Information Commands
 
 | Command | Description |
 |---------|-------------|
@@ -96,7 +74,7 @@ This document provides a list of essential Docker commands along with their desc
 | `docker cp <container-id>:<path> <host-path>` | Copy files/folders between a container and the local filesystem |
 | `docker commit <container-id> <image-name>` | Create a new image from a container's changes |
 
-## Docker Compose
+## Docker Compose Commands
 
 | Command | Description |
 |---------|-------------|
