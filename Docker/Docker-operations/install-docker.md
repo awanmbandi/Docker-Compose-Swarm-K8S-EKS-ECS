@@ -6,12 +6,15 @@
 ## Install Docker on Amazon Linux 2
 ``
 #!/bin/bash
-sudo su
-yum update -y
-yum install docker -y
-systemctl start docker
-systemctl enable docker
-systemctl docker status
+sudo yum update -y
+sudo yum install docker -y
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo systemctl status docker
+sudo groupadd docker
+sudo usermod -aG docker ec2-user
+newgrp docker
+docker version
 ``
 
 ## Check Our Docker Install and Config
@@ -20,10 +23,5 @@ docker version
 
 docker info
 
-docker
-
-docker container run
-
-docker run
 
 
