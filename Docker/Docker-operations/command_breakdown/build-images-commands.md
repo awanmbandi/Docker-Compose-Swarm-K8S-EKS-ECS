@@ -15,6 +15,14 @@ docker ps
 docker stop mynginxdefault
 ```
 
+```bash
+Explanation:
+-d: Runs the container in detached mode (in the background).
+-p 8080:80: Maps port 8080 on your host to port 80 in the container.
+--name my-nginx: Names the container my-nginx.
+nginx: The official Nginx Docker image.
+```
+
 ## Step-2: Create Dockerfile and copy our customized index.html
 - **Dockerfile**
 ```
