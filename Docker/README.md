@@ -3,7 +3,6 @@ This document provides a list of essential Docker commands along with their desc
 
 ## Docker Container Management Commands
 
-#### Test
 | Command | Description |
 |---------|-------------|
 | `docker ps` | List all running containers |

@@ -144,3 +144,24 @@ docker cp <container-id>:<path> <host-path>
 ### Create a new image from a container's changes
 docker commit <container-id> <image-name>
 
+
+###########################################################
+############ DOCKER IMAGE MANAGEMENT COMMANDS #############
+###########################################################
+# List all Docker images
+docker images
+
+### Pull an image from Docker Hub
+docker pull nginx:latest
+
+### Remove a specific Docker image
+docker rmi nginx:latest
+
+### Remove all unused images
+docker image prune -a -f
+
+### Inspect an image
+docker inspect my-custom-image:latest
+
+### Tag an image
+docker tag <your-docker-hub-id>/mynginx_image1:v1 <your-docker-hub-id>/mynginx_image1:v1-release
