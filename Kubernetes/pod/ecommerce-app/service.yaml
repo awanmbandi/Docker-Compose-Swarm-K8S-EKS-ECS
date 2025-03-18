@@ -8,5 +8,6 @@ spec:
     app: ecommerce
   ports:
     - protocol: TCP
-      port: 80              # External port for the Service
-      targetPort: 8080      # Port the application listens on inside the container
+      port: 80              # Service port
+      targetPort: 80        # Container port
+      nodePort: 30007       # Optional: Specify a NodePort (default range: 30000-32767)
