@@ -9,4 +9,4 @@ spec:
   ports:
     - port: 80        # Service port (cluster-internal)
       targetPort: 80  # Container port (matches containerPort in deployment)
-      nodePort: 31000 # External access port (optional, range: 30000-32767)
+      nodePort: 30001 # External access port (optional, range: 30000-32767)
