@@ -1,9 +1,9 @@
 Minikube Cluster Setup on Linux
 ================
 1) Environment:
-	Ubuntu 22.04
-	e2-standard-2
-2) SSH into the "minikube-cluster"
+	Ubuntu 22.04 or 20.04
+	t2.medium
+2) SSH into the Minikube-Server
 3) Elevate your privelege
 	# sudo su
 4) Update the system
