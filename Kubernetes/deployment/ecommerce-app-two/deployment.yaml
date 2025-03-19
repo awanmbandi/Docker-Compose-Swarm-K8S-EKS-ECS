@@ -1,24 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: magento
+  name: ecommerce-app
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
-      app: magento
+      app: ecommerce
   template:
     metadata:
       labels:
-        app: magento
+        app: ecommerce
     spec:
       containers:
-      - name: magento
-        image: magento/magento-cloud-docker-php:latest
+      - name: saleor
+        image: saleor/saleor:latest
         ports:
-        - containerPort: 80
+        - containerPort: 8000
         env:
-        - name: MYSQL_HOST
-          value: "mysql-service"
-        - name: ELASTICSEARCH_HOST
-          value: "elasticsearch-service"
+        - name: SECRET_KEY
+          value: "your-secret-key-here"
+        - name: DATABASE_URL
+          value: "postgresql://user:pass@postgres:5432/saleor"
+        - name: ALLOWED_HOSTS
+          value: "*"
