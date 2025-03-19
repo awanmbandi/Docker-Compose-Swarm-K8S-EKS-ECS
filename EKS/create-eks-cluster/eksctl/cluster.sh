@@ -20,3 +20,5 @@ eksctl delete cluster \
   --name eks-cluster \
   --region us-east-2
 
+###### CONNECT TO YOUR EKS CLUSTER #######
+aws eks update-kubeconfig --name eks-cluster --region us-east-2

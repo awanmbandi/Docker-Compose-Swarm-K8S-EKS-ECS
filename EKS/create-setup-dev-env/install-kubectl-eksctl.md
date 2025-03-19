@@ -18,3 +18,10 @@ sudo mv /tmp/eksctl /usr/local/bin
 eksctl version
 ```
 - Launch Instance
+
+
+###### CONNECT TO YOUR EKS CLUSTER #######
+- Update the KubeConfig
+```bash
+aws eks update-kubeconfig --name eks-cluster --region us-east-2
+```
