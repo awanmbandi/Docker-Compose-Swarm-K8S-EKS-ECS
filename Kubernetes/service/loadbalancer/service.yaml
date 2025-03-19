@@ -5,7 +5,7 @@ metadata:
   labels:
     app: ecommerce
 spec:
-  type: LoadBalancer
+  type: LoadBalancer    # LoadBalancer service type
   ports:
     - port: 80          # External port exposed by the LoadBalancer
       targetPort: 80    # Port on which the container is listening (matches containerPort in Deployment)
