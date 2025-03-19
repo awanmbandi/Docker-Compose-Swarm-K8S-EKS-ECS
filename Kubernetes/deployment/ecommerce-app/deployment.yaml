@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: ecommerce-container
-          image: awanmbandi/ecommerce-webapp:latest  # Replace with your Docker image name
+          image: awanmbandi/modelgadgets-ecom-webapp:latest  # Replace with your Docker image name
           ports:
             - containerPort: 80
