@@ -1,24 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: magento
+  name: medusa
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
-      app: magento
+      app: medusa
   template:
     metadata:
       labels:
-        app: magento
+        app: medusa
     spec:
       containers:
-      - name: magento
-        image: magento/magento-cloud-docker-php:latest
+      - name: medusa
+        image: medusajs/medusa:latest
         ports:
-        - containerPort: 80
+        - containerPort: 9000
         env:
-        - name: MYSQL_HOST
-          value: "mysql-service"
-        - name: ELASTICSEARCH_HOST
-          value: "elasticsearch-service"
+        - name: DATABASE_URL
+          value: "postgres://user:pass@postgres:5432/medusa"
