@@ -7,6 +7,6 @@ metadata:
 spec:
   containers:
     - name: ecommerce-container
-      image: awanmbandi/ecommerce-webapp:latest
+      image: awanmbandi/modelgadgets-ecom-webapp:latest
       ports:
         - containerPort: 80

@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: ecommerce-replicaset
+  labels:
+    app: ecommerce
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ecommerce
+  template:
+    metadata:
+      labels:
+        app: ecommerce
+    spec:
+      containers:
+        - name: ecommerce-container
+          image: awanmbandi/modelgadgets-ecom-webapp:latest
+          ports:
+            - containerPort: 80
