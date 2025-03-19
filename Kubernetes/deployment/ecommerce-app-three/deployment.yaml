@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: medusa
+  name: prestashop
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-      app: medusa
+      app: prestashop
   template:
     metadata:
       labels:
-        app: medusa
+        app: prestashop
     spec:
       containers:
-      - name: medusa
-        image: medusajs/medusa:latest
+      - name: prestashop
+        image: prestashop/prestashop:latest
         ports:
-        - containerPort: 9000
+        - containerPort: 80
         env:
-        - name: DATABASE_URL
-          value: "postgres://user:pass@postgres:5432/medusa"
+        - name: DB_SERVER
+          value: "mysql-service"

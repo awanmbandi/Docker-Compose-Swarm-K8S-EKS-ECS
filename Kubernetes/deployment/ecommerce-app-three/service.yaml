@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: ecommerce-service
+  name: prestashop-service
 spec:
   type: NodePort
   selector:
-    app: medusa
+    app: prestashop  # Matches the label in your deployment
   ports:
-    - port: 80
-      targetPort: 9000
-      nodePort: 31000
+    - port: 80        # Service port (cluster-internal)
+      targetPort: 80  # Container port (matches containerPort in deployment)
+      nodePort: 31000 # External access port (optional, range: 30000-32767)
