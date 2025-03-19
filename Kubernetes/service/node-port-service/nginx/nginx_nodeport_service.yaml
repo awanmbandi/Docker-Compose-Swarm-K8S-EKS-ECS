@@ -10,4 +10,4 @@ spec:
     - name: http
       port: 80 # Service Port
       targetPort: 80 # Container Port
-      nodePort: 30080 # NodePort (Optional)(Node Port Range: 30000-32768)
+      nodePort: 30010 # NodePort (Optional)(Node Port Range: 30000-32768)

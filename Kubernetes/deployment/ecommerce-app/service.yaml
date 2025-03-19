@@ -10,4 +10,4 @@ spec:
     - protocol: TCP
       port: 80              # Service port
       targetPort: 80        # Container port
-      nodePort: 30005       # Optional: Specify a NodePort (default range: 30000-32767)
+      nodePort: 30003       # Optional: Specify a NodePort (default range: 30000-32767)
