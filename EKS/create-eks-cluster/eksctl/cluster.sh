@@ -9,7 +9,8 @@ eksctl create cluster --name eks-cluster \
   --nodes-max 4 \
   --managed
 
-## DELETE THE CLUSTER NODE GROUP
+
+## DELETE THE CLUSTER NODE GROUP #
 eksctl delete nodegroup \
   --cluster eks-cluster \
   --name eks-cluster-ng \
@@ -21,4 +22,4 @@ eksctl delete cluster \
   --region us-east-2
 
 ###### CONNECT TO YOUR EKS CLUSTER #######
-aws eks update-kubeconfig --name eks-cluster --region us-east-2
+aws eks update-kubeconfig --name EKS_CLUSTER_NAME --region CLUSTER_REGION
