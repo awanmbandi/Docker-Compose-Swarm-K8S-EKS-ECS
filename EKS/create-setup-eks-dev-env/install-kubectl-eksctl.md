@@ -16,7 +16,20 @@ kubectl version
 eksctl version
 ```
 
-### STEP 2: CONNECT TO THE CLUSTER AND UPDATE THE `apiVersion` and add `interactiveMode`
+### STEP 3: CREATE EKS CLUSTER (Takes about 15 Minutes)
+```bash
+eksctl create cluster --name eks-cluster \
+  --version 1.30 \
+  --region us-east-2 \
+  --nodegroup-name eks-cluster-ng \
+  --node-type t2.medium \
+  --nodes 3 \
+  --nodes-min 1 \
+  --nodes-max 4 \
+  --managed
+```
+
+### STEP 4: CONNECT TO THE CLUSTER AND UPDATE THE `apiVersion` and add `interactiveMode`
 ```bash
 aws eks update-kubeconfig --name EKS_CLUSTER_NAME --region CLUSTER_REGION
 
@@ -25,7 +38,7 @@ sed -i 's|apiVersion: client.authentication.k8s.io/v1alpha1|apiVersion: client.a
 sed -i '/command: aws/a\      interactiveMode: Never' ~/.kube/config
 ```
 
-###### VERIFY CLUSTER IS WORKING 
+### STEP 5: VERIFY CLUSTER IS WORKING 
 ```bash
 kubectl get nodes
 kubectl get pods
