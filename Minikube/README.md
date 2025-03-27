@@ -73,3 +73,8 @@ kubectl version --client
 kubectl run demo-1 --image nginx
 kubectl get pods
 ```
+
+### TESTING AN APPLICATION DEPLOYED ON NODEPORT
+```bash
+kubectl port-forward --address 0.0.0.0 svc/ecommerce-service 30002:80
+```
