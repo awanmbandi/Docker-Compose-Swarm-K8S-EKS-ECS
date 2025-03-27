@@ -1,5 +1,7 @@
 #!/bin/bash
 ###### What you’ll need
+# Link: https://aws.plainenglish.io/running-minikube-on-an-amazon-linux-ec2-instance-bff31afdac53
+# Amazon Linux 2
 # 2 CPUs or more
 # 2GB of free memory
 # 30GB of free disk space
