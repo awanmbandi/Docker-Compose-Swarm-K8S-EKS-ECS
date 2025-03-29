@@ -10,3 +10,4 @@ spec:
       image: awanmbandi/modelgadgets-ecom-webapp:latest
       ports:
         - containerPort: 80
+

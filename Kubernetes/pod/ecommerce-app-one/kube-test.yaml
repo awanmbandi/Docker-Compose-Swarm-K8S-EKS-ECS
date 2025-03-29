@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name:  ecommerce-app-service
+spec:
+  selector:
+    app: ecommerce-app
+  type:  LoadBalancer
+  ports:
+  - name:  ecommerce-loadbalancer-port
+    port:  80
+    targetPort: 8080
