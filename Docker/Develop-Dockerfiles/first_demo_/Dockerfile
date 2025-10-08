@@ -13,5 +13,10 @@ COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 # Expose port 80 to be able to access the site
 EXPOSE 80
 
-# Default CMD from nginx image will start nginx in the foreground
-# (no need to override)
+### Override CMD — still uses Nginx, but with custom options
+### "nginx",                 # start nginx server
+### "-g",                    # global directive flag
+### "daemon off;",           # keep nginx in foreground
+### "-c",                    # specify config file
+### "/etc/nginx/nginx.conf"  # path to config file (optional)
+CMD ["nginx", "-g", "daemon off;", "-c", "/etc/nginx/nginx.conf"]
