@@ -2,7 +2,7 @@ docker build -t flask-apache-webapp .
 
 docker images
 
-docker run -p 3309:80 -d --name flask-app-v2 flask-apache-webapp:latest
+docker run -p 3310:80 -d --name flask-app-v2 flask-apache-webapp-4:latest
 
 docker run -p 8080:80 -d --name apache-ecommerce-app apache-ecommerce-app:latest
 
