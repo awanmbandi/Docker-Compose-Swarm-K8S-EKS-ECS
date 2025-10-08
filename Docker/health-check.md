@@ -3,6 +3,10 @@
 - Link Examples: https://scoutapm.com/blog/how-to-use-docker-healthcheck
 - https://www.atatus.com/blog/health-check-command-in-docker/
 
+## Check The Health State Of The Application
+```bash
+docker exec -it CONTAINER_ID node HEALTH_CHECK_SCRIPT
+```
 
 ## Docker Commands 
 - Deploy the Application with Health Check
