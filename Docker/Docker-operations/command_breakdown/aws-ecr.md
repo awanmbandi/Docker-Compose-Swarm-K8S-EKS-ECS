@@ -1,10 +1,11 @@
-# Flow-2: Create a new Docker Image, Run as Container and Push to Docker Hub
-
-## Pre-requisite Step
-- Create your Docker hub account. 
-- https://hub.docker.com/
-- **Important Note**: In the below listed commands wherever you see **awanmbandi** you can replace with your own docker hub account id. 
-
+# Flow-2: Create a new Docker Image, Run as Container and Push to AWS ECR
+###### Install AWS CLI 
+```bash
+sudo apt install unzip -y
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+```
 
 ## Step-1: Run the base Nginx container
 - Access the URL http://localhost
@@ -30,14 +31,16 @@ FROM nginx
 COPY index.html /usr/share/nginx/html
 ```
 
-## Step-3: Build Docker Image & run it
+## Step-3: Build Docker Image & Push to AWS ECR
 ```
 docker build -t awanmbandi/mynginx_image1:v1 .
-docker run --name mynginx1 -p 80:80 -d awanmbandi/mynginx_image1:v1
+docker build YOUR_ACCOUNT_ID.dkr.ecr.YOUR_REGION_ID.amazonaws.com/YOUR_ECR_REPO:TAG
 
-Replace your docker hub account Id
-docker build -t <your-docker-hub-id>/image-name:v1 .
-docker run --name mynginx1 -p 80:80 -d <your-docker-hub-id>/mynginx_image1:v1
+aws ecr get-login-password --region YOUR_ECR_REGION | docker login --username AWS --password-stdin YOUR_ACCOUNT_ID.dkr.ecr.YOUR_REGION_ID.amazonaws.com
+
+docker tag YOUR_IMAGE_NAME:TAG YOUR_ACCOUNT_ID.dkr.ecr.YOUR_REGION_ID.amazonaws.com/YOUR_ECR_REPO:TAG
+
+docker push YOUR_ACCOUNT_ID.dkr.ecr.YOUR_REGION_ID.amazonaws.com/YOUR_ECR_REPO:TAG
 ```
 
 ## Step-4: Tag & push the Docker image to docker hub
@@ -55,8 +58,15 @@ docker push <your-docker-hub-id>/mynginx_image1:v1-release
 - Login to docker hub and verify the image we have pushed
 - Url: https://hub.docker.com/repositories
 
+## Login and Push
+docker login
+
+docker login -u <username>
+
+docker push image_name:latest
 
 
+## Other Subjects
 SonarQube Scanner
 Snyk
 Multibranch Scan Webhook Trigger
