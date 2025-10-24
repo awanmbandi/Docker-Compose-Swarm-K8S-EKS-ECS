@@ -21,7 +21,7 @@ eksctl version
 ###### STEP 3: CREATE EKS CLUSTER (Takes about 15 Minutes)
 eksctl create cluster \
   --name CLUSTER_NAME \
-  --version 1.32 \
+  --version 1.34 \
   --region CLUSTER_REGION \
   --nodegroup-name CLUSTER_NODE_GROUP_NAME \
   --node-type t2.medium \

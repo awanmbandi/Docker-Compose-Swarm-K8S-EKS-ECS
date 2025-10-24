@@ -1,0 +1,31 @@
+## RUNBOOK
+- https://github.com/stacksimplify/kubernetes-fundamentals/tree/master/02-PODs-with-kubectl
+
+## DEPLOY AN ECOMMERCE APPPLICATION AND EXPOSE VIA NODE PORT
+## Deploy a Ecommerce App
+kubectl run <desired-pod-name> --image <Container-Image>
+kubectl run ecommercewebapp --image awanmbandi/ecommerceapp:latest --generator=run-pod/v1
+
+## Creating a Kubernetes Service
+kubectl expose pod <Pod-Name>  --type=NodePort --port=80 --name=<Service-Name>
+kubectl expose pod my-first-pod  --type=NodePort --port=80 --name=my-first-service
+
+### ===========================================================
+### Copilot said: The issue is that Minikube runs inside      =
+### The issue is that Minikube runs inside Docker on your EC2 =
+### So the NodePort isn't directly accessible from outside.   =
+### =========================================================== 
+
+kubectl port-forward service/SERVICE_NAME LOCAL_PORT:REMOTE_PORT --address=NETWORK_IP_RANGE
+
+## DEPLOY NGINX APPPLICATION AND EXPOSE VIA NODE PORT
+## Deploy an Nginx App/Pod
+kubectl run nginxwebapp --image nginx:latest --generator=run-pod/v1
+
+## Creating a Kubernetes Service
+kubectl expose pod nginx --type=NodePort --port=80 --name=nginx-service
+
+## Forward the pod to access application (Run In The Backgroun using "&")
+kubectl port-forward service/SERVICE_NAME LOCAL_PORT:REMOTE_PORT --address=NETWORK_IP_RANGE
+
+kubectl port-forward service/hello 31000:8080 --address=0.0.0.0 &
