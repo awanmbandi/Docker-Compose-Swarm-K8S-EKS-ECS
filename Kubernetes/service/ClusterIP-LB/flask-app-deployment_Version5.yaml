@@ -16,20 +16,16 @@ spec:
     spec:
       containers:
       - name: flask-app
-        image: training/webapp:latest
+        image: kodekloud/simple-webapp-mysql:latest
         ports:
-        - containerPort: 5000
+        - containerPort: 8080
         env:
-        - name: DB_HOST
+        - name: DB_Host
           value: "mysql-service"
-        - name: DB_PORT
-          value: "3306"
-        - name: DB_USER
+        - name: DB_User
           value: "appuser"
-        - name: DB_PASSWORD
+        - name: DB_Password
           value: "apppass123"
-        - name: DB_NAME
-          value: "appdb"
         resources:
           requests:
             memory: "128Mi"
@@ -40,12 +36,12 @@ spec:
         readinessProbe:
           httpGet:
             path: /
-            port: 5000
+            port: 8080
           initialDelaySeconds: 10
           periodSeconds: 5
         livenessProbe:
           httpGet:
             path: /
-            port: 5000
+            port: 8080
           initialDelaySeconds: 15
           periodSeconds: 10
